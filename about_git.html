@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>about_git</title>
+</head>
+<body>
+    <ul>
+        <h2>关于git入门</h2>
+        <li><h3>git init</h3></li>
+        <p>当我们建立好一个文件后，对文件进行初始化，这句命令会在 git-demo-1 里创建一个 .git 目录，如下图所示：<br>
+            <img src="img/git_demo_1/git_init.png" alt="">
+        </p>
+        <li><h3>git add</h3></li>
+        <p>使用 git add 将文件添加到「暂存区」。此时我在该目录下创建了一个html文档，about_git.html，将改文件添加到「暂存区」<br>
+        执行命令git add about-git.html，如下图所示：<br>
+        <img src="img/git_demo_1/git_add.png" alt="" style="height:500px;width:800px">
+        当执行git status -sb时，about_git.html前的??变为了A，如下图所示：<br>
+        <img src="img/git_demo_1/git_add_2.png" alt="" style="height:500px;width:800px">
+        </p>
+        <li><h3>git commit -v</h3></li>
+        <p>使用 git commit -v 进入vim 输入message后退出可将文件提交到本地仓库。<br>
+            -v 是显示有哪些更改的。
+        </p>
+    </ul>
+</body>
+</html>
