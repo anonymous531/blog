@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>about_HTTP</title>
+</head>
+<body>
+    <ul>
+        <h2>浅谈HTTP</h2>
+        <li><h3>HTTP请求</h3></li>
+        <h4>请求的格式</h4>
+        <p>
+            1 动词 路径 协议/版本<br>
+            2 Key1: value1<br>
+            2 Key2: value2<br>
+            2 Key3: value3<br>
+            2 Content-Type: application/x-www-form-urlencoded<br>
+            2 Host: www.baidu.com<br>
+            2 User-Agent: curl/7.54.0<br>
+            3 <br>
+            4 要上传的数据<br>
+            <br><br>
+            0.请求最多包含四部分，最少包含三部分。（也就是说第四部分可以为空）<br>
+            1.第三部分永远都是一个回车（\n）<br>
+            2.动词有 GET POST PUT PATCH DELETE HEAD OPTIONS 等<br>
+            3.这里的路径包括「查询参数」，但不包括「锚点」<br>
+            4.如果你没有写路径，那么路径默认为 /<br>
+            5.第 2 部分中的 Content-Type 标注了第 4 部分的格式<br>
+        </p>
+        <h4>用 Chrome 发请求</h4>
+        <p> 1.打开 Network<br>
+            2.地址栏输入网址<br>
+            3.在 Network 点击，查看 request，点击「view source」后可以看到请求的前三部分了<br>
+            4.如果有请求的第四部分，那么在 FormData 或 Payload 里面可以看到<br>
+        </p>
+        <li><h3>HTTP响应</h3></li>
+        <h4>响应的格式</h4>
+        <p> 1 协议/版本号 状态码 状态解释<br>
+            2 Key1: value1<br>
+            2 Key2: value2<br>
+            2 Content-Length: 17931<br>
+            2 Content-Type: text/html<br>
+            3<br>
+            4 要下载的内容<br>
+        </p>
+        <h4>用 Chrome 查看响应</h4>
+        <p>
+            1.打开 Network<br>
+            2.输入网址<br>
+            3.选中第一个响应<br>
+            4.查看 Response Headers，点击「view source」，你会看到响应的前两部分<br>
+            5.查看 Response 或者 Preview，你会看到响应的第 4 部分<br>
+        </p>
+        <li><h3>使用curl 命令</h3>/li>
+        <p>
+            curl命令是一个利用URL规则在命令行下工作的文件传输工具。它支持文件的上传和下载，所以是综合传输工具.<br>
+            <h4>语法</h4>
+            <p>curl(选项)(参数)<br></p>
+            <h4>常用选项</h4>
+            <p>
+                -A/--user-agent <string>              设置用户代理发送给服务器<br>
+                -b/--cookie <name=string/file>        cookie字符串或文件读取位置<br>
+                -c/--cookie-jar <file>                操作结束后把cookie写入到这个文件中<br>
+                -C/--continue-at <offset>             断点续转<br>
+                -D/--dump-header <file>               把header信息写入到该文件中<br>
+                -e/--referer                          来源网址<br>
+                -f/--fail                             连接失败时不显示http错误<br>
+                -H/--header <line>	                  自定义头信息传递给服务器<br>
+                -o/--output                           把输出写到该文件中<br>
+                -O/--remote-name                      把输出写到该文件中，保留远程文件的文件名<br>
+                -r/--range <range>                    检索来自HTTP/1.1或FTP服务器字节范围<br>
+                -s/--silent                           静音模式。不输出任何东西<br>
+                -T/--upload-file <file>               上传文件<br>
+                -u/--user <user[:password]>           设置服务器的用户和密码<br>
+                -w/--write-out [format]               什么输出完成后<br>
+                -x/--proxy <host[:port]>              在给定的端口上使用HTTP代理<br>
+                -#/--progress-bar                     进度条显示当前的传送状态<br>
+            </p>
+            <h4>基本用法</h4>
+            <p># curl https://www.baidu.com<br>
+                执行后，www.linux.com 的html就会显示在屏幕上了<br>
+                中间加上各种参数可以自行百度并尝试，本次任务所用的命令curl -s -v https://www.baidu.com，在explainshell中解释如下：<br>
+                <img src="img/HTTP/curl.png" alt="" style="height:500px;width:800px"><br><br>
+            </p>
+        </p>
+    </ul>
+</body>
+</html>
